@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  housley_aci_audit:
+
+    hostname: housley_aci_audit
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+
+    volumes:
+      - ../:/housley

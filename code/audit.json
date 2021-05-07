@@ -1,0 +1,149 @@
+{
+    "audit_list": [
+ 
+        {"Section": "************ Fabric"},
+        { 
+            "url":"/api/node/class/fabricPod.json",
+            "name":"fab-pods",
+            "comment":"List of Pods in Fabric",
+            "include":true
+        },
+        { 
+            "url": "/api/node/class/fabricNode.json?&order-by=fabricNode.dn",
+            "name":"fab-node-hw",
+            "comment":"List of APICs, Leafs and Spines",
+            "include":true
+        },         
+        { 
+            "url": "/api/node/class/topSystem.json?query-target=children",
+            "name":"fab-node-details",
+            "comment":"Node status, addresses, uptime etc",
+            "include":true
+        },
+        { 
+            "url": "/api/node/class/l1PhysIf.json?&order-by=l1PhysIf.dn",
+            "name":"fab-intf-phys",
+            "comment":"Get interfaces and their status",
+            "include":true
+        },  
+        { 
+            "url": "/api/node/class/ethpmFcot.json?query-target-filter=eq(ethpmFcot.state,\"inserted\")",
+            "name":"fab-sfps",
+            "comment":"Get SFP / FCOT details - skip if not existing",
+            "include":true
+        },        
+        { 
+            "url":"/api/node/class/pcAggrIf.json",
+            "name":"fab-intf-pc",
+            "comment":"Get PC interfaces",
+            "include":true
+        }, 
+        { 
+            "url":"/api/node/class/vpcIf.json",
+            "name":"fab-intf-vpc",
+            "comment":"Get vPC interfaces",
+            "include":true       
+        },     
+
+        {"Section": "************ BGP"},
+        { 
+            "url": "/api/node/class/bgpAsP.json?&order-by=bgpAsP.modTs|desc",
+            "name":"sys-bgp",
+            "comment":"Show BGP peering both internal to infra and multipod",
+            "include":true
+        },
+        { 
+            "url":"/api/node/class/bgpRRNodePEp.json?&order-by=bgpRRNodePEp.dn",
+            "name":"sys-bgp-rr",
+            "comment":"Get details of Spines that are set as Rout reflectors",
+            "include":true
+        },
+        
+        {"Section": "************ System"},
+        { 
+            "url": "/api/node/mo/uni/fabric/format-default.json",
+            "name":"sys-time-zone",
+            "comment":"GEt time Zone",
+            "include":true
+        },        
+        { 
+            "url":  "/api/node/class/datetimePol.json?&order-by=datetimePol.modTs|desc",
+            "name":"sys-time-ntp",
+            "comment":"",
+            "include":true
+        },
+        { 
+            "url": "/api/node/class/dnsProfile.json?query-target=subtree",
+            "name":"sys-dns",
+            "comment":"Get DNS profile and provider details",
+            "include":true
+        },
+
+        {"Section": "************ Tenants"},
+        { 
+            "url": "/api/node/class/fvTenant.json?query-target=subtree",
+            "name":"tenants",
+            "comment":"Get Tenant details",
+            "include":true
+        },
+
+        {"Section": "************ VMM"},
+        { 
+            "todo":"****************************************************yes",
+            "url": "/api/node/class/fvTenant.json?query-target=subtree",
+            "name":"VMM_Domains",
+            "comment":"Get VMM domain details",
+            "include":false
+        },
+
+        {"Section": "************ L4-7"},
+        { 
+            "url": "/api/node/class/vnsMDev.json?&order-by=vnsMDev.modTs|desc",
+            "name":"L47-Dev_pkgs",
+            "comment":"Get TL4-7 device packages",
+            "include":true
+        },
+        { 
+            "todo":"****************************************************yes",
+            "url": "/api/node/class/??",
+            "name":"L47-Devices",
+            "comment":"Get TL4-7 devices",
+            "include":false
+        },
+
+
+        {"Section": "************ Operational"},
+        { 
+            "url": "/api/node/class/faultInst.json?query-target-filter=eq(faultInst.lc,\"raised\")",
+            "name":"op-Faults",
+            "comment":"Get all Current Faults - status raised",
+            "include":true
+        },
+        { 
+            "url": "/api/node/class/coopEpRec.json?&order-by=coopEpRec.modTs|desc",
+            "name":"op-Endpoints",
+            "comment":"List of all EPs from Spine Coop DB",
+            "include":true
+        },
+        { 
+            "url": "/api/node/class/lldpAdjEp.json?&order-by=lldpAdjEp.modTs|desc",
+            "name":"op-LLDP",
+            "comment":"List of LLDP neighbours",
+            "include":true
+        },
+        { 
+            "url": "/api/node/class/cdpAdjEp.json?&order-by=cdpAdjEp.modTs|desc",
+            "name":"op-CDP",
+            "comment":"List of CDP neighbours",
+            "include":true
+        }
+
+        ],
+
+    "parked":[
+        "uni/tn-mgmt.json",
+        "uni.json?query-target=children",
+        "topology/pod-1.json"
+    ]
+
+}

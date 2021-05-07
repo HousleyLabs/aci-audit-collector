@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Other things to ignore
+to_post/
+old/
+archive/
+
+*.log
+*.pdf
+*.tar
+*.gz
+.nfs*
+
+
+output/*
+!output/README.md
+
+git_run.sh

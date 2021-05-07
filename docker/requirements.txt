@@ -1,0 +1,12 @@
+#python-setuptools
+pyopenssl
+colorama
+termcolor
+jinja2
+pyyaml
+xmltodict
+requests
+ncclient
+netmiko
+pysnmp
+
