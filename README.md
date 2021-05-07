@@ -7,12 +7,15 @@
 
 
 ## Clone git repository ##
+- Change to a folder where the application will be installed
+- The git cloning process will create a subfolder called aci-audit-collector
+
 ```
 git clone https://github.com/HousleyLabs/aci-audit-collector
 cd aci-audit-collector
 ```
 
-You will see several folder in this audit application
+You will see inside the newly created folder several subfolders
 - code - Python code that does the audit
 - docker - Docker build files that will make a container with all appropriate libraries/packages
 - output - The output files of the audit will be placed here after the audit is run
