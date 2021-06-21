@@ -1,0 +1,16 @@
+/api/node/class/fabricPod.json;fabpods;
+/api/node/class/fabricNode.json?&order-by=fabricNode.dn;fab-node-hw;
+/api/node/class/topSystem.json;fab-node-details;
+/api/node/class/l1PhysIf.json?&order-by=l1PhysIf.dn;fab-intf-phys;
+/api/node/class/ethpmFcot.json?query-target-filter=eq(ethpmFcot.state,"inserted");fab-sfps;
+/api/node/class/pcAggrIf.json;fab-intf-pc;
+/api/node/class/vpcIf.json;fab-intf-vpc;
+/api/node/class/bgpAsP.json?&order-by=bgpAsP.modTs|desc;sys-bgp;
+/api/node/class/bgpRRNodePEp.json?&order-by=bgpRRNodePEp.dn;sys-bgp-rr;
+/api/node/mo/uni/fabric/format-default.json;sys-time-zone;
+/api/node/class/datetimePol.json?&order-by=datetimePol.modTs|desc;sys-time-ntp;
+/api/node/class/dnsProfile.json?query-target=subtree;sys-dns;
+/api/node/class/vnsMDev.json?&order-by=vnsMDev.modTs|desc;L47-Dev_pkgs;
+/api/node/class/faultInst.json?query-target-filter=eq(faultInst.lc,"raised");op-Faults;
+/api/node/class/lldpAdjEp.json?&order-by=lldpAdjEp.modTs|desc;op-LLDP;
+/api/node/class/cdpAdjEp.json?&order-by=cdpAdjEp.modTs|desc;op-CDP;
