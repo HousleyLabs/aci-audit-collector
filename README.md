@@ -1,10 +1,6 @@
 # Housley ACI Audit Application #
 
 
-## Requirements ##
-- Ensure docker and docker-compose are installed on you local PC
-- Will work on Linux or Windows with WSL - not tested OSX
-
 
 ## Clone git repository ##
 - Change to a folder where the application will be installed
@@ -15,43 +11,17 @@ git clone https://github.com/HousleyLabs/aci-audit-collector
 cd aci-audit-collector
 ```
 
+### Content of Git Repository ###
 You will see inside the newly created folder several subfolders
-- code - Python code that does the audit
+- code - Python code that does the audit for the docker method
+- curl - Contains code using curl method
 - docker - Docker build files that will make a container with all appropriate libraries/packages
 - output - The output files of the audit will be placed here after the audit is run
 
 
-## Run Docker Container Script ##
-```
-bash rundocker.sh
-```
-This script:
-- Builds docker image with python libraries
-- Creates container with the aci-audit-collector directory mounted as a volume
-- Launches into the console of the container in the code directory
-
-
-## View Python Code Help ##
-View the Python help
-```
-root@housley_aci_audit:/housley/code# python run.py -h
-```
-
-
-
-## Run the Audit ##
-```
-python run.py -a <Apic IP/Hostname> -u <User>
-```
-- You will be prompted for password
-- Note: The password is not stored
-
-
-
-## Close Container ##
-```
-root@housley_aci_audit:/housley/code# exit
-```
+## Choose a Method to run the ACI Audit ##
+- [Python in Docker Method](README_python_in_docker.md)
+- [Curl in Bash Method](README_curl_in_bash.md)
 
 
 

@@ -2,7 +2,7 @@
 
 http_https="https://"
 config_file="audit.csv"
-output_folder="output"
+output_folder="../output"
 
 
 
@@ -128,10 +128,10 @@ echo "### Collecting Data ###"
 
 
 
-while IFS=";" read -r url_var name_var dud
+while IFS=";" read -r name_var url_var dud
 do
   echo "Extracting - $name_var - $url_var"
-  curl -sSk -X GET -b ACI_COOKIE_FILE -o $output_folder/$name_var --create-dirs $http_https$apic_ip$url_var
+  curl -sSk -X GET -b ACI_COOKIE_FILE -o $output_folder/$name_var.json --create-dirs $http_https$apic_ip$url_var
   echo "  Done"
 done < $config_file
 
@@ -142,6 +142,15 @@ echo
 echo "### Deleting Cookie ###"
 rm ACI_COOKIE_FILE
 echo "  Done"
+
+### Archive data to tar.gz file ###
 echo
+echo "### Archiving Data to output.tar.gz ###"
+tar -czvf ../output.tar.gz ../output
+echo "  Done"
+
+### End of Script ###
+echo
+echo "### Audit Complete ###"
 echo
 echo
