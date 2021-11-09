@@ -1,4 +1,4 @@
-# Housley ACI Audit Application - Docker Method #
+# Housley ACI Audit Application - Python in Docker Method #
 This script:
 - Builds docker image with python libraries
 - Creates container with the aci-audit-collector directory mounted as a volume

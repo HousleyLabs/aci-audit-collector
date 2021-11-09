@@ -17,4 +17,10 @@ archive/
 output/*
 !output/README.md
 
+code/cisco/*
+!code/cisco/README.md
+!code/cisco/version.properties
+!code/cisco/cnae_data_collection.py
+
+
 git_run.sh

@@ -1,4 +1,4 @@
-# Housley ACI Audit Application - Shell Method #
+# Housley ACI Audit Application - Curl in Bash Method #
 This script uses curl to collect data from the APIC
 
 

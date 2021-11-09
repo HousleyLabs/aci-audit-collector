@@ -15,7 +15,7 @@
             "include":true
         },
         {
-            "url": "/api/node/class/topSystem.json?query-target=children",
+            "url": "/api/node/class/topSystem.json",
             "name":"fab-node-details",
             "comment":"Node status, addresses, uptime etc",
             "include":true
